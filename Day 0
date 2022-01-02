@@ -1,3 +1,25 @@
-Looking forward to pushing myself to get more comfortable with #Kubernetes this year - join me on my #100daysofkubernetes challenge!
+Twitter Posts:
+*Looking forward to pushing myself to get more comfortable with #Kubernetes this year - join me on my #100daysofkubernetes challenge!
+*Day 0 of #100daysofkubernetes: I know that k8s handles container orchestration, but honestly even my basic container knowledge isn't that great. I'll likely spend a week or two getting more comfortable with Docker https://docs.docker.com/get-started/
 
-Day 0 of #100daysofkubernetes: I know that k8s handles container orchestration, but honestly even my basic container knowledge isn't that great. I'll likely spend a week or two getting more comfortable with Docker https://docs.docker.com/get-started/
+I did watch this video https://youtu.be/iqqDU2crIEQ "How to Get Started with Docker" from @pmckee. He goes a bit fast but it's a good initial glance at what Docker/containers provide: lightweight, immutable instances that can be easily shared and executed.
+
+One of the key things he addresses in the video is that there's essentially three phases for a docker image:
+Build. Ship. and Run.  
+
+Outstanding questions:
+Question: What's the difference in building a custom docker image (using the build command) versus using an image via the FROM command in the docker file?
+    I'm pretty sure the FROM command in the dockerfile is essentially a "base" image but I'm not certain
+  
+What's the difference between docker run vs docker start commands
+
+When might you use docker compose vs just a regular docker instance?
+
+
+Bonus Points:
+Tangential but somewhat relating to Docker - in order to import a "custom" linux distro for WSL2, Docker is used to download the relevant tar file.  
+More info here: https://docs.microsoft.com/en-us/windows/wsl/use-custom-distro 
+
+
+
+
