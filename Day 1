@@ -1,0 +1,11 @@
+Day 1 of #100daysofkubernetes: 
+ 
+Tweet:
+I really like what Microsoft has to say about the benefit of containers here https://docs.microsoft.com/en-us/learn/modules/intro-to-docker-containers/
+
+"Teams today must release apps quickly to attract and keep business. This requirement forces software development and support teams to always look at solutions that save time and reduces costs. An ideal solution will reduce the time spent on creating and configuring deployment environments, and simplify the software deployment process."
+
+While the technical side is interesting (namespace-based isolation, removing the hypervisor) - ultimately, it's a business decision to rely on a leaner, more efficient solution.   
+
+
+
