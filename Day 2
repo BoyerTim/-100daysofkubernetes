@@ -1,0 +1,16 @@
+Day 2 of #100daysofkubernetes
+Key Components of Docker: Docker Engine, Images, Image Registries
+
+Docker Engine:
+The Docker Engine is really the meat of the docker ecosystem. It consists of the Docker client (a cli tool that acts as the interface) and the Docker server (dockerd, the daemon which manages the lifecycle of the container and can interact with other system daemons). Both run on the same host and communicate via REST API calls.  
+
+Docker Images:
+From https://docs.docker.com/get-started/overview/: 
+"An image is a read-only template with instructions for creating a Docker container. Often, an image is based on another image, with some additional customization. For example, you may build an image which is based on the ubuntu image, but installs the Apache web server and your application, as well as the configuration details needed to make your application run."
+
+https://docs.microsoft.com/en-us/learn/modules/intro-to-docker-containers/3-how-docker-images-work
+"The container image becomes the unit we use to distribute applications. A container image is immutable. Once you've built an image, the image can't be changed. The only way to change an image is to create a new image. The (running) container is the in-memory instance of an image."
+
+Docker registries:
+Docker Hub is a 'container registry', a repo used to store and distribute container images.  Alternatively, you can host a private docker registry, or use your preferred cloud provider's solution (AWS ECS, Azure Container Registry, etc).  
+
