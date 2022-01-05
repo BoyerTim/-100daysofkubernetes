@@ -1,0 +1,7 @@
+Day 3 of #100daysofkubernetes
+
+Here (https://www.youtube.com/watch?v=8fi7uSYlOdc) is an exceptional (live!!) talk from @lizrice where she builds a container in Go to demonstrate the foundational concepts of containerization such as namespacing (where we limit what a particular process can see, such as: other PIDS or kernel level processes, mounts, network objects, user IDs, etc), chroot (which limits a process's file system scope and makes it think a child directory is /), and cgroups (control groups, which limit what resources a container can use, like memory, CPU, or IO bandwidth constraints).
+
+She then goes on to demonstrate how a container might prevent a simple fork bomb from getting out of control.  Fantastic talk.
+
+Bonus points: she’s also a musician! https://open.spotify.com/artist/5Dw69aCRz8fS2HNyPybHZt
