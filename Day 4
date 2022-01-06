@@ -1,0 +1,74 @@
+Day 4 of #100daysofkubernetes
+The Dockerfile - a blueprint for your container
+
+I really like how @edurekaIN describes the dockerfile in this video https://www.youtube.com/watch?v=2lU9zdrs9bM : "Dockerfile is a script, composed of various commands (instructions) and arguments listed successively to automatically perform actions on a base image in order to create (or form) a new one"
+
+Common elements of a Dockerfile:
+
+A base image is pulled from docker hub (or your repo of choice) using the FROM command
+
+The RUN command - essentially 'run's commands via shell when a container is *built*. Not to be confused with...
+
+CMD Command - which might only execute commands AFTER the container is initialized.
+
+So for clarity, RUN is used to setup your environment (make sure you have the latest packages/libraries) and CMD is used to launch a process in your container when it starts up, like nginx, for example. 
+
+ENTRYPOINT is another instruction, it is similar to CMD in that it executes commands when a container runs, but unlink CMD, the commands passed to the container cannot be overwritten via the docker run command.  Very subtle difference - this blog post does a much better job of explaining it: https://www.bmc.com/blogs/docker-cmd-vs-entrypoint/
+
+COPY command is used to, you guessed it, copy files from a source (on your host, for example) to destination (your shiny new container)
+
+ENV command sets environment variables that will be used in the container
+
+WORKDIR defines where the CMD commands will execute. /app, for example
+
+EXPOSE command specifies the port where your application might be available. 8080, for example. Note, port mapping may be required for a local instance.  
+
+USER can specify a UID or username the container will run as. 
+
+VOLUME is used if data persistence is required and lets you store data on the host
+
+Will likely revisit the dockerfile at a later date with best practices, just trying to learn the territory for now.  
+
+
+
+
+Not tweeted:
+https://docs.microsoft.com/en-us/learn/modules/intro-to-docker-containers/3-how-docker-images-work
+A Dockerfile is a text file that contains the instructions we use to build and run a Docker image. The following aspects of the image are defined:
+
+The base or parent image we use to create the new image
+Commands to update the base OS and install additional software
+Build artifacts to include, such as a developed application
+Services to expose, such as storage and network configuration
+Command to run when the container is launched
+
+	# Step 1: Specify the parent image for the new image
+	FROM ubuntu:18.04
+
+	# Step 2: Update OS packages and install additional software
+	RUN apt -y update &&  apt install -y wget nginx software-properties-common apt-transport-https \
+		&& wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
+		&& dpkg -i packages-microsoft-prod.deb \
+		&& add-apt-repository universe \
+		&& apt -y update \
+		&& apt install -y dotnet-sdk-3.0
+
+	# Step 3: Configure Nginx environment
+	CMD service nginx start
+
+	# Step 4: Configure Nginx environment
+	COPY ./default /etc/nginx/sites-available/default
+
+	# STEP 5: Configure work directory
+	WORKDIR /app
+
+	# STEP 6: Copy website code to container
+	COPY ./website/. .
+
+	# STEP 7: Configure network requirements
+	EXPOSE 80:8080
+
+	# STEP 8: Define the entry point of the process that runs in the container
+	ENTRYPOINT ["dotnet", "website.dll"]
+
+
