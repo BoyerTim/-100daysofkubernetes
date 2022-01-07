@@ -1,0 +1,23 @@
+Day 5 of #100daysofkubernetes
+Building your image 
+
+Yesterday we covered the Dockerfile - we've written our container blueprint, what next?
+Enter stage left: the docker build command. 
+
+In your terminal, enter: docker build [location of Dockerfile] 
+Don't forget in linux you can use . to indicate the current working directory
+
+It's at this time that we might also tag the image with the -t flag. Very useful for versioning
+
+You are able to have multiple tags a la 
+	docker build -t whenry/fedora-jboss:latest -t whenry/fedora-jboss:v2.1 .
+  
+Wait, after I build the image, where does it go?  Good question, Tim. If you 'docker inspect [imageID]' then we'll see a ton of cool info, but also where the layers of the image live; typically /var/lib/docker/ but the 'docker info' command will show explicitly where the Docker Root Dir is configured.
+
+Once built, if you're feeling chummy, you might then docker push the image for others to enjoy the fruits of your labor 
+
+Or just use it yourself via docker run [shiny-new-image-name]
+
+Interesting factoid from the docs:
+"Remember that the docker daemon could be running on a remote machine and that no parsing of the Dockerfile happens at the client side (where you’re running docker build)."
+
