@@ -1,0 +1,22 @@
+Day 6 of #100daysofkubernetes
+
+Now that we've built our image, we need to initialize it and deploy our container.  
+
+At the bare minimum we must say 'docker run [imageID]'
+
+However there are many, many options to be used with docker run
+Syntax: docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+
+
+Common options include:
+running the container detached (in the background) via the -d switch 
+
+"By design, containers started in detached mode exit when the root process used to run the container exits, unless you also specify the --rm option. If you use -d with --rm, the container is removed when it exits or when the daemon exits, whichever happens first."
+https://docs.docker.com/engine/reference/run/#detached--d
+Giving the container a name via --name [desired_container_name]
+
+If necessary you might want a direct shell into your container
+docker run -it image /bin/bash
+
+Other run options might include port mapping, volume mounting, clean up, or runtime constraints.  
+More info in the fine manual: https://docs.docker.com/engine/reference/run/
