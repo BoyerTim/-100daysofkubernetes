@@ -1,0 +1,10 @@
+https://twitter.com/BoyerTimTweets/status/1480371598079234050
+
+Links to someone's post about the "proper" progression for learning kubernetes: 
+
+"I find the following learning order helpful:
+
+1. Containers (low-level Linux impl)
+2. Images (why do you need them)
+3. Managers (many containers, one host)
+4. Orchestrators (many hosts, one app)"
