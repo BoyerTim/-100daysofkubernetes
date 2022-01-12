@@ -1,0 +1,11 @@
+Day 9 of #100daysofkubernetes
+One thing that's been confusing me in my research: a container is so lightweight due to the ability to share kernel space of the host OS, but what if the host OS is different than the container's image (do containers have their own operating systems??? Answer: no, not its own OS (careful you're getting confused by old-school VM tech) but they CAN have an entire distro in the container, though it's not exactly lean).  
+
+If I'm running server 2019 and I have a bunch of centOS containers on the box, are those containers more VM-like (emulating the kernel) than their *nix equivalent? 
+
+Yes, virtualization is required for a windows system to run a linux container, according to https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/linux-containers
+
+(Funny, I've never even considered windows containers but that's definitely a thing https://www.docker.com/products/windows-containers)
+
+Thanks @iximiuz for this blog post, helped clear up my confusion!
+https://iximiuz.com/en/posts/not-every-container-has-an-operating-system-inside
