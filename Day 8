@@ -1,0 +1,7 @@
+
+Day 8 of #100daysofkubernetes
+Thank you @KienzlerSimon for a great article on exploring the container jungle!
+https://www.inovex.de/de/blog/containers-docker-containerd-nabla-kata-firecracker/
+
+Learned about @OCI_ORG
+And also the importance of runc (I honestly wasn't expecting to get further down the stack than containerd, but this rabbit hole runs deep).
