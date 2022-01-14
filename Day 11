@@ -1,0 +1,3 @@
+Day 11 of #100daysofkubernetes
+Here's a cool tool that inspects Docker and podman image layers visually, and also provides "image efficiency" estimates (which can theoretically hook into a CI/CD pipeline) to make sure your containers are nice and toight.
+https://github.com/wagoodman/dive
