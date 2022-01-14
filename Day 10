@@ -1,0 +1,5 @@
+Day 10 of #100daysofkubernetes
+
+Docker Docker Docker - earlier we learned that there's an Open Container Initiative and Open Container Standard.  So what other options are out there besides Docker? "Who cares, Docker is ubiquitous" - well, just because something is popular doesn't mean it's the best. Case in point - Crocs.
+
+I stumbled upon this https://courses.mkdev.me/p/dockerless-re-explore-containers-from-open-standards-perspective course by @Fodoj and it looks really solid; hopefully it will answer my questions.  If I do end up taking it I'll be sure to post a review. 
