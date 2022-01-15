@@ -1,0 +1,16 @@
+Day 12 of #100daysofkubernetes
+
+Wild Friday night spent going through the official Docker tutorial.  Feel like I've been bouncing around with my studies and have been meaning to just go through it.
+
+Some tricks I learned along the way
+
+docker rm -f [containerID] can be used to kill a container without having to stop it THEN remove it. #lazy
+
+Speaking of lazy, you don't need to type out the whole container id when referencing one. The first few characters should suffice.
+
+Since a docker container exits when it's main process ends, we can add && tail -f /dev/null to the docker run to keep the container running indefinitely (useful for debugging, I imagine). 
+Ex:  docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
+
+learned about the docker exec command which lets you interact with a (detached) container without having to foreground it, er, re-attach it.  
+
+Containers are ephemeral but my data demands permanence, damnit! Volumes solve this problem. The tutorial does a good job demonstrating this by creating a volume, deploying a container that recognizes the volume, writing to a sqlite db, killing the container, spinning up a NEW container and seeing our data inputted from the initial container. Neat.  
