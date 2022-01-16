@@ -1,0 +1,27 @@
+Day 13 of #100daysofkubernetes
+
+This post https://twitter.com/heyJTK/status/1481652902913458184 is pretty interesting for a few reasons.
+Immediately we see that at least 2k people agree that Docker is "lowkey terrible" 
+Further down the thread the co-creator of Docker chimes in, always interesting to see an inventor speak about his creation.
+
+A lot of sentiment seems to be that docker is handy for dev environments, less so for prod
+Funny enough, a lot of other people say it's great for prod but terrible for dev.
+🤔 
+
+Some other critiques:
+https://twitter.com/mzedeler/status/1482360115491741704
+I agree that the dx is just not ideal:
+ - combing through a JSON dump when want a container IP
+ - running out of disk space because docker doesn't free up disk space
+ - weird CLI behavior of docker-compose
+ - docker run <something-with-typo> and you have malware
+ 
+ 
+On the other hand,
+https://twitter.com/andrenit/status/1481906765658836993
+ Most complaints on Docker DX are due to badly written “docker-compose” files and/or inefficient workflows that run a build on every single interaction.
+
+It is not the hammer’s fault if you need a screwdriver.
+
+Besides the Docker back and forth I also learned about WebAssembly and NixOS, two things I hadn't heard of before. 
+
